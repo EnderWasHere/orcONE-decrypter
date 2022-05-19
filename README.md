@@ -20,6 +20,7 @@ Extras entregues:
 
 
 Chaves de criptografia utilizadas:
+
     A letra "e" é convertida para "enter"
     A letra "i" é convertida para "imes"
     A letra "a" é convertida para "ai"
@@ -27,6 +28,7 @@ Chaves de criptografia utilizadas:
     A letra "u" é convertida para "ufat"
 
 exemplo:
-"gato" => "gaitober"
-gaitober" => "gato"
+
+    "gato" => "gaitober"
+    gaitober" => "gato"
 
