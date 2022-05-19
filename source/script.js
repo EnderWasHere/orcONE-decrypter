@@ -7,12 +7,14 @@ function workMode(param) {
     if (param){
         document.getElementById("Card").style.display = "none";
         document.getElementById("emptyAlert").style.display = 'none';
+        document.getElementById("btnAlert").style.display = 'none';
         document.getElementById("outForm").style.display = 'block'
     }
     else
     {
         document.getElementById("Card").style.display = "block";
         document.getElementById("emptyAlert").style.display = 'block';
+        document.getElementById("btnAlert").style.display = 'block';
         document.getElementById("outForm").style.display = 'none'
     }
 }
