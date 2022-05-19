@@ -2,18 +2,17 @@
 Repositório destinado ao primeiro desafio Oracle ONE BR
 
 Requisitos obrigatórios entregues:
+
     ✔️ Validação de entrada.
         ✔️ Funciona apenas com letras minúsculas.
         ✔️ Não aceita letras com acentos nem caracteres especiais.
     ✔️ Criptografia de duas vias (chave abaixo).
 
 Extras entregues:
+
     ✔️ Botão de copiar texto de saída.
-
-    ✔️ Alertas
-
+    ✔️ Alertas:
         ✔️ de validação.
-        
         ✔️ tutorial simples de uso.
     ✔️ Responsivo (incluindo mobile).
     ✔️ Reativo (altera elementos estruturais conforme uso)
