@@ -9,8 +9,11 @@ Requisitos obrigatórios entregues:
 
 Extras entregues:
     ✔️ Botão de copiar texto de saída.
+
     ✔️ Alertas
+
         ✔️ de validação.
+        
         ✔️ tutorial simples de uso.
     ✔️ Responsivo (incluindo mobile).
     ✔️ Reativo (altera elementos estruturais conforme uso)
