@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="Pt-Br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="source/media/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="source/style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+  <title> Decrypter - Alura Challenge 1</title>
+</head>
+
+<body>
+  <main>
+    <div class="container py-4">
+      <header class="pb-3 mb-4 border-bottom">
+        <a href="https://www.alura.com.br/oracle-next-education" target="_blank"
+          class="d-flex align-items-center text-dark text-decoration-none">
+          <img src="source/media/alura.svg" width="75" height="35" class="me-2" alt="Alura" />
+          <img src="source/media/oracle.svg" width="120" height="17" class="me-2" alt="Oracle One Next Education" />
+          <span class="fs-4 text-uppercase mx-auto">Decrypter</span>
+        </a>
+      </header>
+      <div class="p-4 mb-4 bg-light rounded-3">
+        <div class="container-fluid py-5">
+          <h1 class="display-7 fw-bold">Sobre a criptografia</h1>
+          <p class="col-md-8 fs-5">A criptografia, encriptação, ou cifragem, é o processo de transformar informação
+            usando um algoritmo
+            de modo a impossibilitar a sua leitura a todos excepto aqueles que possuam uma identificação particular,
+            geralmente referida
+            como chave.</p>
+        </div>
+
+      </div>
+
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 mb-5 border-bottom"></section>
+
+      <div class="row align-items-md-stretch">
+        <div class="col-md-6">
+          <div class="h-100 p-4 text-white bg-dark rounded-3">
+            <!-- INTPUT -->
+            <div class="mb-3">
+              <label class="form-label">Example textarea</label>
+              <textarea class="form-control text-white bg-dark" id="intTxt" onkeyup="intValidation()" rows="10"></textarea>
+            </div>
+            <!-- ALERTA DE VALIDACAO -->
+            <div class="alert alert-warning alert-dismissible fade show" id="validationAlert" style="display:none">
+              <h4 class="alert-heading"><i class="bi bi-exclamation-triangle-fill p-2"></i>Caracter inválido!</h4>
+              <hr>
+              <p>Por favor utilize o seguinte padrão de texto:</p>
+              <ul>
+                <li>Utilize apenas letras minúsculas.</li>
+                <li>Não utilize acentuação.</li>
+                <li>Não utilize caracteres especiais.</li>
+                <li>Não utilize símbolos.</li>
+              </ul>
+              <hr>
+              <p>Potuações permitidas: ; : , . ' "</p>
+            </div>
+            <!-- BOTOES -->
+            <div class="btn-group d-flex justify-content-center">
+              <button type="button" class="btn btn-secondary" onclick="encrypt()"><i class="bi bi-lock-fill p-2"></i>Encriptar</button>
+              <button type="button" class="btn btn-secondary" onclick="decrypt()"><i class="bi bi-unlock-fill p-2"></i>Desencriptar</button>
+              <button type="button" class="btn btn-danger" onclick="intClear()"><i class="bi bi-backspace-fill"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6 ">
+          <div class="h-100 p-4 bg-secondary border rounded-3 row justify-content-center">
+            <!-- <h3>Por enquanto nenhuma mensagem.</h3> -->
+            <div class="mb-3" id="outForm" style="display:none">
+              <label class="form-label">Example textarea</label>
+              <textarea class="form-control text-white bg-secondary" id="outTxt" disabled="true" rows="10"></textarea>
+              <button type="button" class="form-control mt-3 btn btn-primary"><i class="bi bi-clipboard2-fill p-2"></i>Copiar</button>
+            </div>
+            <div class="card mr-3 p-4 bg-secondary" id="Card" style="width: 18rem;">
+              <img src="source/media/oracleone.svg" class="card-img-top" alt="Oracle one">
+              <div class="card-body">
+                <p class="card-text text-uppercase text-left text-light mt-3"><b>Acreditamos que a tecnologia é para todos</b></p>
+              </div>
+            </div>
+            <!-- ALERTA TUTORIAL -->
+            <div class="alert alert-secondary mt-3" id="emptyAlert" style="display:block">
+              <h4 class="alert-heading"><i class="bi bi-question-square-fill p-2"></i>Entrada de texto vazia.</h4>
+              <hr>
+              <p>Insira seu texto e selecione uma operação.</p>
+            </div>
+          </div>
+
+        </div>
+        
+      </div>
+      
+      <section class="d-flex justify-content-center justify-content-lg-between p-4 mb-5 border-bottom"></section>
+
+
+      <footer class="text-center text-lg-start text-muted">
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          <h6 class="text-uppercase fw-bold mb-3">
+            <i class="bi bi-info-circle-fill  me-1"></i> sobre a experiência de participar
+          </h6>
+          Gostei do desafio proposto, apesar da não obrigatoriedade me senti convidado á realizar o mesmo. Tentei fazer
+           algo limpo e que atendesse o propósito pedido, o front-end não é meu lugar de conforto porém usei todas as
+           cartas que pude para trazer este resultado, apesar das dúvidas consegui por em prática oque idealizei sobre
+           a minha versão deste desafio. E no final o resultado obtido me satisfez, espero que agrade. Aguardo por mais desafios.
+        </div>
+
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 mb-5 border-bottom"></section>
+
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+          <h6 class="text-uppercase fw-bold mb-3">
+            <i class="bi bi-question-circle-fill"></i></i> Sobre o projeto
+          </h6>
+          Este desafio faz parte do projeto ONE BR, da Oracle em parceria com a Alura, e foi proposto no
+          primeiro bimestre á todos aqueles que se dispuseram á o realizar. Com o intúito de promover não
+          só a prática e fixar os conhecimentos obtidos dentro do projeto, más também para criar um
+          portifólio atrativo para o participante e assim também para os recrutadores.
+        </div>
+
+        <section class="d-flex justify-content-center justify-content-lg-between p-4 mb-5 border-bottom"></section>
+
+
+        <div class="container text-center text-md-start mt-5">
+          <div class="row mt-3 p-4 bg-light">
+            <div class="col-md-3 col-lg-3 col-xl-2 mb-md-0 mx-auto mb-3">
+              <h6 class="text-uppercase fw-bold mb-4">Tecnologias utilizadas</h6>
+              <p><a href="https://mdbootstrap.com/" target="_blank" class="text-reset">
+                  <i class="bi bi-bootstrap-fill p-2"></i>Bootstrap 5</a></p>
+              <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/HTML" target="_blank" class="text-reset">
+                  <i class="bi bi-filetype-html p-2"></i>HTML</a></p>
+              <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/CSS" target="_blank" class="text-reset">
+                  <i class="bi bi-filetype-css p-2"></i>CSS</a></p>
+              <p><a href="https://developer.mozilla.org/pt-BR/docs/Web/JavaScript" target="_blank" class="text-reset">
+                  <i class="bi bi-filetype-js p-2"></i>JavaScript</a></p>
+            </div>
+
+            <div class="col-md-3 col-lg-3 col-xl-2 mb-md-0 mx-auto mb-3">
+              <h6 class="text-uppercase fw-bold mb-4">Contatos</h6>
+              <p><a href="https://github.com/EnderWasHere" target="_blank" class="text-reset">
+                  <i class="bi bi-github p-2"></i>@enderwashere</a></p>
+              <p><a href="https://www.linkedin.com/in/heliel-holanda-a149b0149/" target="_blank" class="text-reset">
+                  <i class="bi bi-linkedin p-2"></i>@heliel_holanda</a></p>
+              <p><a href="https://www.linkedin.com/school/aluracursos/" target="_blank" class="text-reset">
+                  <i class="bi bi-linkedin p-2"></i>@alura</a></p>
+              <p><a href="https://www.linkedin.com/company/oracle/" target="_blank" class="text-reset">
+                  <i class="bi bi-linkedin p-2"></i>@oracle</a></p>
+            </div>
+
+          </div>
+
+        </div>
+
+      </footer>
+    </div>
+
+  </main>
+  <script src="source/script.js"></script>
+</body>
+
+</html>
