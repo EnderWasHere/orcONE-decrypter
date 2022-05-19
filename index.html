@@ -27,10 +27,8 @@
         <div class="container-fluid py-5">
           <h1 class="display-7 fw-bold">Sobre a criptografia</h1>
           <p class="col-md-8 fs-5">A criptografia, encriptação, ou cifragem, é o processo de transformar informação
-            usando um algoritmo
-            de modo a impossibilitar a sua leitura a todos excepto aqueles que possuam uma identificação particular,
-            geralmente referida
-            como chave.</p>
+            usando um algoritmo de modo a impossibilitar a sua leitura a todos excepto aqueles que possuam uma
+            identificação particular, geralmente referida como chave.</p>
         </div>
 
       </div>
@@ -42,7 +40,6 @@
           <div class="h-100 p-4 text-white bg-dark rounded-3">
             <!-- INTPUT -->
             <div class="mb-3">
-              <label class="form-label">Example textarea</label>
               <textarea class="form-control text-white bg-dark" id="intTxt" onkeyup="intValidation()" rows="10"></textarea>
             </div>
             <!-- ALERTA DE VALIDACAO -->
@@ -59,23 +56,41 @@
               <hr>
               <p>Potuações permitidas: ; : , . ' "</p>
             </div>
-            <!-- BOTOES -->
+            <!-- BOTOES MENU -->
             <div class="btn-group d-flex justify-content-center">
-              <button type="button" class="btn btn-secondary" onclick="encrypt()"><i class="bi bi-lock-fill p-2"></i>Encriptar</button>
-              <button type="button" class="btn btn-secondary" onclick="decrypt()"><i class="bi bi-unlock-fill p-2"></i>Desencriptar</button>
-              <button type="button" class="btn btn-danger" onclick="intClear()"><i class="bi bi-backspace-fill"></i></button>
+              <button type="button" class="btn btn-secondary" onclick="encrypt()">
+                <i class="bi bi-lock-fill p-2"></i>Encriptar
+              </button>
+              <button type="button" class="btn btn-secondary" onclick="decrypt()">
+                <i class="bi bi-unlock-fill p-2"></i>Desencriptar
+              </button>
+              <button type="button" class="btn btn-danger" onclick="intClear()">
+                <i class="bi bi-backspace-fill p-2"></i>Limpar
+              </button>
             </div>
-
+            <!-- ALERTA TUTORIAL BOTOES -->
+            <div class="alert alert-secondary mt-3" id="emptyAlert" style="display:block">
+              <h4 class="alert-heading"><i class="bi bi-question-square-fill p-2"></i>Manual de operações</h4>
+                <hr>
+                <ul>
+                  <li><b>Encriptar</b> codifica seu texto.</li>
+                  <li><b>Desencriptar</b> decodifica seu texto.</li>
+                  <li><b>Limpar</b> apaga seu texto.</li>
+                </ul>
+            </div>
+                  
           </div>
         </div>
-
+              
         <div class="col-md-6 ">
           <div class="h-100 p-4 bg-secondary border rounded-3 row justify-content-center">
+            <!-- OUTPUT -->
             <div class="mb-3" id="outForm" style="display:none">
-              <label class="form-label">Example textarea</label>
               <textarea class="form-control text-white bg-secondary" id="outTxt" disabled="true" rows="10"></textarea>
-              <button type="button" class="form-control mt-3 btn btn-primary"><i class="bi bi-clipboard2-fill p-2"></i>Copiar</button>
+              <button type="button" class="form-control mt-3 btn btn-primary" onclick="ctrolCtxt()">
+                <i class="bi bi-clipboard2-fill p-2"></i>Copiar</button>
             </div>
+            <!-- CARD -->
             <div class="card mr-3 p-4 bg-secondary" id="Card" style="width: 18rem;">
               <img src="source/media/oracleone.svg" class="card-img-top" alt="Oracle one">
               <div class="card-body">
@@ -84,9 +99,9 @@
             </div>
             <!-- ALERTA TUTORIAL -->
             <div class="alert alert-secondary mt-3" id="emptyAlert" style="display:block">
-              <h4 class="alert-heading"><i class="bi bi-question-square-fill p-2"></i>Entrada de texto vazia.</h4>
+              <h4 class="alert-heading"><i class="bi bi-question-square-fill p-2"></i>Saída de texto vazia.</h4>
               <hr>
-              <p>Insira seu texto e selecione uma operação.</p>
+              <p>Insira seu texto e selecione uma operação para começar.</p>
             </div>
 
           </div>
@@ -101,9 +116,9 @@
             <i class="bi bi-info-circle-fill  me-1"></i> sobre a experiência de participar
           </h6>
           Gostei do desafio proposto, apesar da não obrigatoriedade me senti convidado á realizar o mesmo. Tentei fazer
-           algo limpo e que atendesse o propósito pedido, o front-end não é meu lugar de conforto porém usei todas as
-           cartas que pude para trazer este resultado, apesar das dúvidas consegui por em prática oque idealizei sobre
-           a minha versão deste desafio. E no final o resultado obtido me satisfez, espero que agrade. Aguardo por mais desafios.
+          algo limpo e que atendesse o propósito pedido, o front-end não é meu lugar de conforto porém usei todas as
+          cartas que pude para trazer este resultado, apesar das dúvidas consegui por em prática oque idealizei sobre
+          a minha versão deste desafio. E no final o resultado obtido me satisfez, espero que agrade. Aguardo por mais desafios.
         </div>
 
         <section class="d-flex justify-content-center justify-content-lg-between p-4 mb-5 border-bottom"></section>
