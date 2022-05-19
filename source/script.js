@@ -2,7 +2,7 @@ const intText = document.getElementById("intTxt");
 const outText = document.getElementById("outTxt");
 const resultText = document.querySelector(".resultText");
 
-workMode(true)
+// controlador de elementos visuais simples
 function workMode(param) {
     if (param){
         document.getElementById("Card").style.display = "none";
@@ -20,38 +20,36 @@ function workMode(param) {
 function encrypt() {
     if (intText.value !="") {
         workMode(true);
-        textEncrypted = intText.value.replace(/e/g, "enter");
-        textEncrypted = textEncrypted.replace(/i/g, "imes");
-        textEncrypted = textEncrypted.replace(/a/g, "ai");
-        textEncrypted = textEncrypted.replace(/o/g, "ober");
-        textEncrypted = textEncrypted.replace(/u/g, "ufat");
+        encryptedTxt = intText.value.replace(/e/g, "enter");
+        encryptedTxt = encryptedTxt.replace(/i/g, "imes");
+        encryptedTxt = encryptedTxt.replace(/a/g, "ai");
+        encryptedTxt = encryptedTxt.replace(/o/g, "ober");
+        encryptedTxt = encryptedTxt.replace(/u/g, "ufat");
 
-        outText.textContent = textEncrypted;
-        intText.value = "";
-        outText.lupa="none";
+        outText.textContent = encryptedTxt;
 
 }}
 
 function decrypt() {
     if(intText.value !="") {
         workMode(true);
-        textDecrypted = intText.value.replace(/enter/g, "e");
-        textDecrypted = textDecrypted.replace(/imes/g, "i");
-        textDecrypted = textDecrypted.replace(/ai/g, "a");
-        textDecrypted = textDecrypted.replace(/ober/g, "o");
-        textDecrypted = textDecrypted.replace(/ufat/g, "u");
+        decryptedTxt = intText.value.replace(/enter/g, "e");
+        decryptedTxt = decryptedTxt.replace(/imes/g, "i");
+        decryptedTxt = decryptedTxt.replace(/ai/g, "a");
+        decryptedTxt = decryptedTxt.replace(/ober/g, "o");
+        decryptedTxt = decryptedTxt.replace(/ufat/g, "u");
 
-        outText.textContent = textDecrypted;
-        intText.value = "";
-        outText.lupa="none";
+        outText.textContent = decryptedTxt;
 }}
 
-function intClear () {
+// limpar intput e resetar layout
+function intClear() {
     workMode(false);
     intText.value = ""
     document.getElementById("validationAlert").style.display = 'none';
 }
 
+// validação intput
 function intValidation() {
     intText.value = intText.value.toLowerCase();
     if (intText.value.match(/([^\w\s+*:;,.'"()/\\]+)/)) {
@@ -64,3 +62,10 @@ function intValidation() {
         // console.log ("VALIDAÇÃO OKAY")
 }}
 
+// copiar texto output
+function ctrolCtxt() {
+    outText.select();
+    outText.setSelectionRange(0, 99999); /* mobile friendly */
+    navigator.clipboard.writeText(outText.value);
+    alert("Copiado. 📋✔️ ");
+}
