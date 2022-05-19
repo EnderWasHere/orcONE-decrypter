@@ -1,9 +1,8 @@
-const intText = document.getElementById("intTxt"); // or however you want to get it
-const outText = document.getElementById("outTxt"); //where is going to show the result of the encrypt/decrypt
+const intText = document.getElementById("intTxt");
+const outText = document.getElementById("outTxt");
 const resultText = document.querySelector(".resultText");
 
 workMode(true)
-//this function make the text and image of the result area disappear when the encrypt/decrypt button are clicked
 function workMode(param) {
     if (param){
         document.getElementById("Card").style.display = "none";
@@ -54,15 +53,14 @@ function intClear () {
 }
 
 function intValidation() {
-    intText.value = intText.value.toLowerCase(); // covert to lower case
+    intText.value = intText.value.toLowerCase();
     if (intText.value.match(/([^\w\s+*:;,.'"()/\\]+)/)) {
-        console.log ("ERRO DE VALIDAÇÃO")
+        // console.log ("ERRO DE VALIDAÇÃO")
         document.getElementById("validationAlert").style.display = 'block';
         intText.value = intText.value.replace(/([^\w\s+*:;,.'"()/\\]+)/gi, "");
     }
     else {
-        // hide validation error
         document.getElementById("validationAlert").style.display = 'none';
-        console.log ("VALIDAÇÃO OKAY")
+        // console.log ("VALIDAÇÃO OKAY")
 }}
-    
+
